@@ -1,4 +1,4 @@
 # 100daysPython
-I am doint the bootcamp of python for 100 days following the syllabus of Dr.Angela Yu without actually watching her videos.
+I am doing the bootcamp of python for 100 days following the syllabus of Dr.Angela Yu without actually watching her videos.
 I am mostly doing challenges and project on a daily basis.
-And i wish to complete this bootcamp without taking any gaps as before. So Wish me Luck!
+And i wish to complete this bootcamp without taking any gaps as before. So Wish me Luck! After 18 days i'm pretty confident for building real world project. And i will create some awesome projects while completing this bootcamp..

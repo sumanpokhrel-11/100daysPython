@@ -5,8 +5,15 @@ And i wish to complete this bootcamp without taking any gaps as before. So Wish 
 
 [day-1:  Working with variables in Python to manage data.
 ](url)
-On this day,I learned about variables in Python and how to manage different data using those variables. And at the end of the day, I created a 
-> Band Name Generator 
+On this day,I learned about variables in Python and how to manage different data using those variables.
+> Day 1 Project: Band Name Generator 
 
 [day-2:  Understanding Datatypes and how to manipulates Strings.
 ](url)
+Python Primitive Data Types
+Type Error, Type Checking and Type Conversion
+Data Types
+Mathematical Operations in Python
+BMI Calculator
+Number Manipulation and F Strings in Python
+> Day 2 Project: Tip Calculator

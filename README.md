@@ -36,6 +36,7 @@ Number Manipulation and F Strings in Python
 
 ## day 70
 I have completed day 70 which is about Version Control using Git and remote repository called Github.
-
+this line is written in local ide and i will push it using git.
 
 I am preparing for something cool so i am focusing on what's important for that stuff but i will complete all the 100 days as i have promised earlier....
+

@@ -24,6 +24,7 @@ Mathematical Operations in Python
 BMI Calculator
 Number Manipulation and F Strings in Python
 > Day 2 Project: Tip Calculator
+![image of the output](image.png)
 
 ## day-70
 

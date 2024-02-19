@@ -26,6 +26,15 @@ Number Manipulation and F Strings in Python
 > Day 2 Project: Tip Calculator
 ![image of the output](image.png)
 
+
+## day-3
+
+
+> Day 3 Project: Treasure Hunt
+![alt text](image-1.png)
+![alt text](image-2.png)
+![alt text](image-3.png)
+![alt text](image-4.png)
 ## day-70
 
 I have completed day 70 which is about Version Control using Git and remote repository called Github.

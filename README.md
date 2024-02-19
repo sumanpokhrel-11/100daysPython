@@ -29,8 +29,11 @@ Number Manipulation and F Strings in Python
 ## day-3
 
 Control Flow with if / else and Conditional Operators
+
 Nested if statements and elif statements
+
 Multiple If Statements in Succession
+
 Logical Operators
 
 > Day 3 Project: Treasure Hunt
@@ -38,6 +41,27 @@ Logical Operators
 ![alt text](image-2.png)
 ![alt text](image-3.png)
 ![alt text](image-4.png)
+
+## day-4
+
+Random Module
+
+Understanding the Offset and Appending Items to Lists
+
+IndexErrors and Working with Nested Lists
+
+> Day 4 Project: Rock Paper Scissor Game
+![alt text](image-5.png)
+![alt text](image-6.png)
+
+## day-5
+
+Using the for loop with Python Lists
+
+for loops and the range() function
+
+> Day 5 Project: Password Generator
+![alt text](image-7.png)
 
 ## day-70
 

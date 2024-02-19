@@ -14,53 +14,58 @@ print("""--------------ROCK PAPER SCISSOR---------------
 import random
 values = ['r', 'p','s']
 score = 0
-def wannaPlay():
-    play= input("Do you want to play this game?(Y/N)")
-    if play.lower() =='y':
-        return True
-if wannaPlay() ==False:
-    print("OKAY SOME OTHER TIME MATE!!")
-else:
+def condition(user_choice, ai_choice):
+    pass
+# def wannaPlay():
+#     play= input("Do you want to play this game?(Y/N)")
+#     if play.lower() =='y':
+#         return True
+play = True
+attempt = 0
+while play:
+    wanna_play= input("Do you want to play this game?(Y/N)")
+    if wanna_play.lower() == 'y':
+        play = True
+        attempt +=1
+    else:
+        play = False
+        break
+        
     print("---Let's the game begin---")
-    choice = input("\n Choose one (Rock or Paper or Scissor ) as (R/P/S): ")
-    choice = choice.lower()
+    choice = input("\n Choose one (Rock or Paper or Scissor ) as (R/P/S): ").lower()
     aiChoice = random.choice(values)
     # Conditions for games
-    if choice=='r' and aiChoice =='r':
-        choice = input("\n Choose one (Rock or Paper or Scissor ) as (R/P/S): ")
-        choice = choice.lower()
-        aiChoice = random.choice(values)
+    if choice== aiChoice:
+        print("Same choice! Tied")
+        score = score
+        if attempt==0:
+            attempt = 0
+        else:
+            attempt -=1
+        print(f"score is: {score}/{attempt}")
         
     elif choice =='r' and aiChoice =='p':
         score = score
-        print("You Lose.... Your score is: ", score)
-        wannaPlay()
-    elif choice =='p' and aiChoice =='p':
-        choice = input("\n Choose one (Rock or Paper or Scissor ) as (R/P/S): ")
-        choice = choice.lower()
-        aiChoice = random.choice(values)
-        
-    elif choice =='s' and aiChoice =='s':
-       
-       choice = input("\n Choose one (Rock or Paper or Scissor ) as (R/P/S): ")
-       choice = choice.lower()
-       aiChoice = random.choice(values)
+        print(f"You Lose.... Your score is: {score}/{attempt}")
+        # wannaPlay()
+    
     elif choice =='p' and aiChoice=='s':
         score = score
-        print("You Lose.... Your score is: ", score)
-        wannaPlay()
+        print(f"You Lose.... Your score is: {score}/{attempt}")
+
+        # wannaPlay()
     elif choice =='s' and aiChoice=='r':
         score = score
-        print("You Lose.... Your score is: ", score)
-        wannaPlay()
+        print(f"You Lose.... Your score is: {score}/{attempt}")
+        # wannaPlay()
     elif(choice =='r' and aiChoice =='s') or(choice=='p' and aiChoice=='r') or(choice=='s' and aiChoice=='p'):
 
         score = score +1
         print("----------Hurrey! YOU WON")
-        print("-------Score =>",score)
-        wannaPlay()
+        print(f"-------Score => {score}/{attempt}") 
+        # wannaPlay()
     else:
         print("Wrong Input")
-        wannaPlay()
+        # wannaPlay()
 
 

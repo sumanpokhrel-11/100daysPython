@@ -3,6 +3,63 @@ print("""---------------Welcome to the clsTreasure Hunt-------------------
 ------------based on that you will move forward towards treasure or die--------------
 -----------if you're lucky enough, you will eventually get the treasure--------------""")
 
+died = '''
+
+$$\     $$\                               $$\ $$\                 $$\ 
+\$$\   $$  |                              $$ |\__|                $$ |
+ \$$\ $$  /$$$$$$\  $$\   $$\        $$$$$$$ |$$\  $$$$$$\   $$$$$$$ |
+  \$$$$  /$$  __$$\ $$ |  $$ |      $$  __$$ |$$ |$$  __$$\ $$  __$$ |
+   \$$  / $$ /  $$ |$$ |  $$ |      $$ /  $$ |$$ |$$$$$$$$ |$$ /  $$ |
+    $$ |  $$ |  $$ |$$ |  $$ |      $$ |  $$ |$$ |$$   ____|$$ |  $$ |
+    $$ |  \$$$$$$  |\$$$$$$  |      \$$$$$$$ |$$ |\$$$$$$$\ \$$$$$$$ |
+    \__|   \______/  \______/        \_______|\__| \_______| \_______|
+                                                                      
+                                                                                                                                         
+'''
+won = '''
+
+$$\     $$\                         $$\      $$\                     
+\$$\   $$  |                        $$ | $\  $$ |                    
+ \$$\ $$  /$$$$$$\  $$\   $$\       $$ |$$$\ $$ | $$$$$$\  $$$$$$$\  
+  \$$$$  /$$  __$$\ $$ |  $$ |      $$ $$ $$\$$ |$$  __$$\ $$  __$$\ 
+   \$$  / $$ /  $$ |$$ |  $$ |      $$$$  _$$$$ |$$ /  $$ |$$ |  $$ |
+    $$ |  $$ |  $$ |$$ |  $$ |      $$$  / \$$$ |$$ |  $$ |$$ |  $$ |
+    $$ |  \$$$$$$  |\$$$$$$  |      $$  /   \$$ |\$$$$$$  |$$ |  $$ |
+    \__|   \______/  \______/       \__/     \__| \______/ \__|  \__|
+                                                                                                                                         
+                                                                     
+'''
+
+lose = '''
+
+$$\     $$\                         $$\                               
+\$$\   $$  |                        $$ |                              
+ \$$\ $$  /$$$$$$\  $$\   $$\       $$ | $$$$$$\   $$$$$$$\  $$$$$$\  
+  \$$$$  /$$  __$$\ $$ |  $$ |      $$ |$$  __$$\ $$  _____|$$  __$$\ 
+   \$$  / $$ /  $$ |$$ |  $$ |      $$ |$$ /  $$ |\$$$$$$\  $$$$$$$$ |
+    $$ |  $$ |  $$ |$$ |  $$ |      $$ |$$ |  $$ | \____$$\ $$   ____|
+    $$ |  \$$$$$$  |\$$$$$$  |      $$ |\$$$$$$  |$$$$$$$  |\$$$$$$$\ 
+    \__|   \______/  \______/       \__| \______/ \_______/  \_______|
+                                                                      
+                                                                      
+                                                                      
+
+'''
+treasure = '''
+
+$$$$$$$$\                                                                    
+\__$$  __|                                                                   
+   $$ | $$$$$$\   $$$$$$\   $$$$$$\   $$$$$$$\ $$\   $$\  $$$$$$\   $$$$$$\  
+   $$ |$$  __$$\ $$  __$$\  \____$$\ $$  _____|$$ |  $$ |$$  __$$\ $$  __$$\ 
+   $$ |$$ |  \__|$$$$$$$$ | $$$$$$$ |\$$$$$$\  $$ |  $$ |$$ |  \__|$$$$$$$$ |
+   $$ |$$ |      $$   ____|$$  __$$ | \____$$\ $$ |  $$ |$$ |      $$   ____|
+   $$ |$$ |      \$$$$$$$\ \$$$$$$$ |$$$$$$$  |\$$$$$$  |$$ |      \$$$$$$$\ 
+   \__|\__|       \_______| \_______|\_______/  \______/ \__|       \_______|
+                                                                             
+                                                                             
+                                                                             
+
+'''
 def start():
     play = input("\nAre you ready to hunt the treasure? {Y/N}: ")
     if play.lower()=="y":
@@ -10,31 +67,29 @@ def start():
     else:
         return False
 
-treasure = 0
 health= 100
-if start()==False:
-    print(f"You have collected {treasure} treasure")
-elif health ==0:
-    print("------------You are dead--------")
-else:
+
+if start():
     print("""----------Let's the hunt begin------------
     ------------you are in the middle of the jungle--------
     ---------you have to find the way to the treasure following your instincts and your guts--------
-    -------there are multiple enemies in the way which are deadly enough to kill you in a moment--------
-    -------where some enemies may lose your health by some point------------
-    --------if your health reaches to zero you're dead---------------
-    -------------if you found the treasure you won----------------------
-          -----------so let's gooooooooooooooo---------------------""")
+    there are multiple enemies in the way which are deadly enough to kill you in a moment
+    where some enemies may lose your health by some point
+    if your health reaches to zero you're dead
+    if you found the treasure you won
+    --------------------so let's gooooooooooooooo---------------------""")
     
     choice1 = input("\n Make a move either to left or right(L/R): ")
     if choice1.lower() == "l":
         print("Venomous Snake bite you")
         health = 0
+        if health== 0:
+            print(died)
     if choice1.lower() =='r':
         print("You've reached the sea shore")
         print("""---You see a boat there ---
-              ---it could be a trap or ride to the treasure---
-              ---think wisely---""")
+              it could be a trap or ride to the treasure
+              think wisely""")
         choice2 = input("\Do you want to take the boat or not? (Y/N): ")
         if choice2.lower()=='n':
             print("Wrong Choice!! next boat will arive full of other treasure hunter which will kill you")
@@ -63,11 +118,9 @@ else:
         
                     choice5 = input("Do you want to dig the statue?(Y/N): ")
                     if choice5.lower() =='y':
-                        print("""--------------You found the treasure--------------
-                  -----------------------------------------------------
-                  -----------------------------------------------------
-                  -------------------YOU WON---------------------------
-                  -----------------------------------------------------""")
+                        print(treasure)
+                        print(won)
+
                     else:
                         print("You will never found the treasure at any other place!!!")
-                        print("""--------------You Lose--------------------""")
+                        print(lose)

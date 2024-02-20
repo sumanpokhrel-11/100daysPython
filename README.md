@@ -63,6 +63,12 @@ for loops and the range() function
 > Day 5 Project: Password Generator
 ![alt text](image-7.png)
 
+## day -7
+
+![alt text](image-8.png)
+![alt text](image-9.png)
+![alt text](image-10.png)
+
 ## day-70
 
 I have completed day 70 which is about Version Control using Git and remote repository called Github.

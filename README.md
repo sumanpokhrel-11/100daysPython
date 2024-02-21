@@ -65,12 +65,16 @@ for loops and the range() function
 
 ## day -7
 
+On this day, I learnt how to break a big problem into small chunks and solving them separately. I than created a flowchart for the problem to visualize.
+
+> Day 7 Project: Hangman Game
 ![alt text](image-8.png)
 ![alt text](image-9.png)
 ![alt text](image-10.png)
 
 ## day -8
 
+> Day 8 Project: Caesar Cipher Encryption and Decryption
 ![alt text](image-11.png)
 
 ## day-70

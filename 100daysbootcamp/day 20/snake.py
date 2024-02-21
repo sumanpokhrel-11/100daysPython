@@ -11,6 +11,7 @@ class Snake:
         self.creating_snake()
         self.head = self.initial_snake[0]
     def creating_snake(self):
+        '''this function create a snake of 3 square shape'''
         # x, y = -40, 0
         for initial in INITIAL_SEGMENT:
             sam = Turtle('square')
@@ -22,15 +23,22 @@ class Snake:
             self.initial_snake.append(sam)
 
     def move_snake(self):
-
-            for seg in range(len(self.initial_snake)-1, 0, -1):
-                new_x = self.initial_snake[seg-1].xcor()
-                new_y = self.initial_snake[seg-1].ycor()
-                self.initial_snake[seg].goto(new_x, new_y)
-            self.head.forward(SPEED)
-            # initial_snake[0].left(90)
+        '''
+this functions moves the snake'''
+        for seg in range(len(self.initial_snake)-1, 0, -1):
+            new_x = self.initial_snake[seg-1].xcor()
+            new_y = self.initial_snake[seg-1].ycor()
+            self.initial_snake[seg].goto(new_x, new_y)
+        self.head.forward(SPEED)
+        # initial_snake[0].left(90)
 
        
+    '''
+    these are the functions for moving the buttons and these stops moving
+    directly to opposite direction i.e moving right to left directly is opposed
+'''
+   
+
     def down(self):
         if self.head.heading() != UP:
             self.head.setheading(DOWN)

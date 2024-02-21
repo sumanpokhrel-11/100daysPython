@@ -55,12 +55,12 @@ else:
 
 
 
-letters = ['A', 'B', 'C', 'D', 'E', 'F', 'G','H', 'I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W',
-          'X','Y','Z','A', 'B', 'C', 'D', 'E', 'F', 'G','H', 'I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W',
-          'X','Y','Z' ]
-letters.lower()
-key = int(input("Enter the key to shift the message: "))
-message = str(input("Enter the message you want to send: "))
+# letters = ['A', 'B', 'C', 'D', 'E', 'F', 'G','H', 'I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W',
+#           'X','Y','Z','A', 'B', 'C', 'D', 'E', 'F', 'G','H', 'I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W',
+#           'X','Y','Z' ]
+# letters.lower()
+# key = int(input("Enter the key to shift the message: "))
+# message = str(input("Enter the message you want to send: "))
 
 # def caesar(key, message, direction):
 #     end_text = ''

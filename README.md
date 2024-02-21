@@ -69,6 +69,10 @@ for loops and the range() function
 ![alt text](image-9.png)
 ![alt text](image-10.png)
 
+## day -8
+
+![alt text](image-11.png)
+
 ## day-70
 
 I have completed day 70 which is about Version Control using Git and remote repository called Github.

@@ -14,13 +14,21 @@ class Snake:
         '''this function create a snake of 3 square shape'''
         # x, y = -40, 0
         for initial in INITIAL_SEGMENT:
-            sam = Turtle('square')
-            sam.penup()
-            sam.color('white')
-            sam.goto(initial)
-            # sam.goto(x,y)
-            # x +=20
-            self.initial_snake.append(sam)
+            self.add_snake(initial)
+
+    def add_snake(self, initial):
+        '''create new piece for the snake'''
+        sam = Turtle('square')
+        sam.penup()
+        sam.color('white')
+        sam.goto(initial)
+        # sam.goto(x,y)
+        # x +=20
+        self.initial_snake.append(sam)
+
+    def extend(self):
+        '''add the new piece at last of the previous snake'''
+        self.add_snake(self.initial_snake[-1].position())
 
     def move_snake(self):
         '''

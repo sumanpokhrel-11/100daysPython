@@ -1,38 +1,47 @@
 from turtle import Turtle, Screen
 from ball import Ball
+from paddle import Paddle
+
+ball = Ball()
 screen = Screen()
+screen.tracer(0)
+
 screen.setup(width=800, height=600)
 screen.bgcolor('black')
 screen.title('Pong Game')
-screen.tracer(0)
-
-paddle = Turtle()
-paddle.shape('square')
-paddle.color("white")
-paddle.penup()
-paddle.shapesize(stretch_len=1, stretch_wid=5)
-paddle.setposition(350,0)
-
-def go_up():
-    new_y = paddle.ycor() + 20 # to move up by 20 pixels
-    paddle.goto(paddle.xcor(), new_y)
-
-def go_down():
-    new_y = paddle.ycor() - 20 # to move down by 20 pixels
-    paddle.goto(paddle.xcor(), new_y)
-
+paddle_r = Paddle(350,0)
+paddle_l = Paddle(-350,0)
 
 screen.listen()
-screen.onkey(go_up,'Up')
-screen.onkey(go_down,'Down')
+#for right paddle, the controller will be arrow up and down
+screen.onkey(paddle_r.go_up, 'Up')
+screen.onkey(paddle_r.go_down, 'Down')
+
+#for left paddle, the controller will be key w for up and s for down
+screen.onkey(paddle_l.go_up, 'w')
+screen.onkey(paddle_l.go_down, 's')
+
+
 
 game_on = True
 while game_on:
     ''' using screen tracer stops 
     the animations and using update, updates the screen '''
     screen.update()
+    ball.move_ball()
+
+# if the ball hit the top or buttom of the screen
+# so detecting the collison with the wall
+    if ball.ycor()>280 or ball.ycor()<-280:
+        ball.bounce_y()
 
 
-# ball = Ball()
-# ball.move_ball()
+
+# detecting collison with paddle
+    if ball.distance(paddle_r)<50 and ball.xcor()>320 or ball.distance(paddle_l)<50 and ball.xcor() < -320:
+        ball.bounce_x()
+
+    # detecting the paddle missing the ball
+    if ball.xcor()>400 or ball.xcor()<-400:
+        game_on = False
 screen.exitonclick()

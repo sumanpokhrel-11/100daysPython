@@ -1,0 +1,28 @@
+breaking the Pong game problem into multiple simple steps
+following are the key elements in the game:
+    there are 2 players
+    each separated by a vertical dotted line in the center
+    bot score is put on their side
+    buttons are up and down
+    when the ball cross the half side and comes to right, 
+    then the right player get the controller of the movement
+
+breaking of problem:
+    creating 2 player bar
+    creating a dotted vertical bar for separating the player
+    
+
+1. creating a screen
+2. creating and moving a paddle
+3. creating another paddle
+4. creating a ball and moving continuously
+5. detecting collision with wall and bounce
+6. detecting collision with paddle
+7. detecting when paddle misses ball
+8. keeping track of score
+
+for paddle on right
+width = 20
+height = 100
+x_pos = 350
+y_pos = 0

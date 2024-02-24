@@ -2,6 +2,7 @@ from turtle import Turtle, Screen
 from ball import Ball
 from paddle import Paddle
 from score_board import Score
+import time
 ball = Ball()
 screen = Screen()
 screen.tracer(0)
@@ -28,6 +29,7 @@ game_on = True
 while game_on:
     ''' using screen tracer stops 
     the animations and using update, updates the screen '''
+    time.sleep(ball.pace)
     screen.update()
     ball.move_ball()
 
@@ -35,18 +37,21 @@ while game_on:
 # so detecting the collison with the wall
     if ball.ycor()>280 or ball.ycor()<-280:
         ball.bounce_y()
-
+        
 
 
 # detecting collison with paddle
     if ball.distance(paddle_r)<50 and ball.xcor()>320 or ball.distance(paddle_l)<50 and ball.xcor() < -320:
         ball.bounce_x()
+        ball.speed('fast')
         
     # detecting the paddle missing the ball
     if ball.xcor()>400:
+        score.score_l()
         ball.reset_position()
 
     if ball.xcor()<-400:
+        score.score_r()
         ball.reset_position()
 
     

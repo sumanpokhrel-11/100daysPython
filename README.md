@@ -78,6 +78,12 @@ On this day, I learnt how to break a big problem into small chunks and solving t
 > Day 8 Project: Caesar Cipher Encryption and Decryption
 ![alt text](image-11.png)
 
+## day -9
+
+> Day 9 Project: Secret Auction
+![alt text](image-12.png)
+![alt text](image-13.png)
+
 ## day-70
 
 I have completed day 70 which is about Version Control using Git and remote repository called Github.

@@ -84,6 +84,11 @@ On this day, I learnt how to break a big problem into small chunks and solving t
 ![alt text](image-12.png)
 ![alt text](image-13.png)
 
+## day -10
+
+> Day 10 Project: Calculator
+![alt text](image-14.png)
+
 ## day-70
 
 I have completed day 70 which is about Version Control using Git and remote repository called Github.

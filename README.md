@@ -93,6 +93,10 @@ On this day, I learnt how to break a big problem into small chunks and solving t
 
 > Day 11 Project: Black Jack
 
+## day -12
+
+> Day 12 Project: Number Guessing Game
+
 ## day-70
 
 I have completed day 70 which is about Version Control using Git and remote repository called Github.

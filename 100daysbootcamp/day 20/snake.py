@@ -62,3 +62,8 @@ this functions moves the snake'''
     def up(self):
         if self.head.heading() != DOWN:
             self.head.setheading(UP)
+
+    def reset(self):
+        self.initial_snake.clear()
+        self.creating_snake()
+        self.head = self.initial_snake[0]

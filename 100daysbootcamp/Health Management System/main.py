@@ -30,8 +30,8 @@ def get_info():
         
 
 
-ans = int(input("Enter 1 for storing info. 2 for retrieving info."))
-if ans==1:
+query = int(input("Enter 1 for storing info. 2 for retrieving info."))
+if query==1:
     put_info()
 else:
     get_info()

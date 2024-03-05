@@ -14,6 +14,7 @@ class Score(Turtle):
         self.write_score()
 
     def write_score(self):
+        '''update scoreboard'''
         self.clear()
         self.write(f'Score : {self.score}  High Score: {self.high_score}', align=ALIGN, font=FONT)
         

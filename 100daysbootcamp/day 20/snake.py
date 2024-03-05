@@ -48,22 +48,28 @@ this functions moves the snake'''
    
 
     def down(self):
+        '''arrow down'''
         if self.head.heading() != UP:
             self.head.setheading(DOWN)
     
     def left(self):
+        '''arrow left'''
         if self.head.heading() != RIGHT:
             self.head.setheading(LEFT)
     
     def right(self):
+        '''arrow right'''
         if self.head.heading() != LEFT:
             self.head.setheading(RIGHT)
     
     def up(self):
+        '''arrow up'''
         if self.head.heading() != DOWN:
             self.head.setheading(UP)
 
-    def reset(self):
+    def snake_reset(self):
+        for seg in self.initial_snake:
+            seg.goto(1000,1000)
         self.initial_snake.clear()
         self.creating_snake()
         self.head = self.initial_snake[0]

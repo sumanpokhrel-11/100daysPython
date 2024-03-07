@@ -24,7 +24,7 @@ Mathematical Operations in Python
 BMI Calculator
 Number Manipulation and F Strings in Python
 > Day 2 Project: Tip Calculator
-![image of the output](image.png)
+![image of the output](images/image.png)
 
 ## day-3
 
@@ -37,10 +37,10 @@ Multiple If Statements in Succession
 Logical Operators
 
 > Day 3 Project: Treasure Hunt
-![alt text](image-1.png)
-![alt text](image-2.png)
-![alt text](image-3.png)
-![alt text](image-4.png)
+![alt text](images/image-1.png)
+![alt text](images/image-2.png)
+![alt text](images/image-3.png)
+![alt text](images/image-4.png)
 
 ## day-4
 
@@ -51,8 +51,8 @@ Understanding the Offset and Appending Items to Lists
 IndexErrors and Working with Nested Lists
 
 > Day 4 Project: Rock Paper Scissor Game
-![alt text](image-5.png)
-![alt text](image-6.png)
+![alt text](images/image-5.png)
+![alt text](images/image-6.png)
 
 ## day-5
 
@@ -61,7 +61,7 @@ Using the for loop with Python Lists
 for loops and the range() function
 
 > Day 5 Project: Password Generator
-![alt text](image-7.png)
+![alt text](images/image-7.png)
 
 ## day -7
 
@@ -69,25 +69,25 @@ On this day, I learnt how to break a big problem into small chunks and solving t
 
 > Day 7 Project: Hangman Game
 
-![alt text](image-8.png)
-![alt text](image-9.png)
-![alt text](image-10.png)
+![alt text](images/image-8.png)
+![alt text](images/image-9.png)
+![alt text](images/image-10.png)
 
 ## day -8
 
 > Day 8 Project: Caesar Cipher Encryption and Decryption
-![alt text](image-11.png)
+![alt text](images/image-11.png)
 
 ## day -9
 
 > Day 9 Project: Secret Auction
-![alt text](image-12.png)
-![alt text](image-13.png)
+![alt text](images/image-12.png)
+![alt text](images/image-13.png)
 
 ## day -10
 
 > Day 10 Project: Calculator
-![alt text](image-14.png)
+![alt text](images/image-14.png)
 
 ## day -11
 

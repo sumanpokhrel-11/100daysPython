@@ -1,0 +1,15 @@
+at first the available bet is shown
+than user is asked how much bet he wants to do
+then user is asked if he want to deal or hit
+at first round the user should deal
+user's card have 2 card known to user and dealer 1 card is known to the user
+based on the sum of 2 card user decide whether to deal another card or hit
+if user deal, then another card is added to both user and
+ dealer if the user cards exceed 21 then he looses directly
+ if not user is again asked if he wanted to deal another card or hit
+ if the user deals another same procedure will happen but if he hit than
+ the sum of both user and dealer is shown and if the user surpasses the 21 he looses, 
+ if the dealer gets 21 but user don't than he looses, if the dealer card is close to or equal 
+ to 21 user looses again. else user wins
+ than user is asked if he wanted to play again if yes the same procedure is repeated else
+ the result is shown with remaining money

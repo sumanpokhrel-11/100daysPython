@@ -13,8 +13,7 @@ state_name = state['state'].to_list()
 answer_collection = []
 game_is_on = True
 while len(answer_collection)< 50:
-    answer = screen.textinput(title=f'{counter}/50 States are Correct', prompt= "Enter another state name: ")
-    answer = answer.capitalize()
+    answer = screen.textinput(title=f'{counter}/50 States are Correct', prompt= "Enter another state name: ").title()
     
 
     # checking if the answer is in the list of state_name
@@ -28,8 +27,14 @@ while len(answer_collection)< 50:
         sam.write(answer)
         counter +=1
 
-    if answer not in state_name:
-        game_is_on = False
+    if answer =='Exit':
+        states_not_remembered = []
+        for i in state_name:
+            if i not in answer_collection:
+                states_not_remembered.append(i)
+        states_not_remembered = pd.DataFrame(states_not_remembered)
+        states_not_remembered.to_csv('100daysbootcamp/day 25/states_not_remembered.csv')
+        break
 
 screen.exitonclick()
 

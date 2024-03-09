@@ -13,7 +13,7 @@ state_name = state['state'].to_list()
 answer_collection = []
 game_is_on = True
 while game_is_on:
-    answer = screen.textinput(title='Guess the US state', prompt= "What's another state name: ")
+    answer = screen.textinput(title=f'{counter}/50 States are Correct', prompt= "Enter another state name: ")
     answer = answer.capitalize()
     answer_collection.append(answer)
 

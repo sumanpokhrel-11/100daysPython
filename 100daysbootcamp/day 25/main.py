@@ -18,7 +18,7 @@ while len(answer_collection)< 50:
     
 
     # checking if the answer is in the list of state_name
-    if answer in state_name:
+    if (answer in state_name) and (answer not in answer_collection):
         state_data = state[state['state'] == answer]
         answer_collection.append(answer)
         sam = turtle.Turtle()

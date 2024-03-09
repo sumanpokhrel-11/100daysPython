@@ -8,12 +8,13 @@ turtle.shape(image)
 
 
 state = pd.read_csv('100daysbootcamp\day 25\states.csv')
-
+counter = 0
 state_name = state['state'].to_list()
 answer_collection = []
 game_is_on = True
 while game_is_on:
     answer = screen.textinput(title='Guess the US state', prompt= "What's another state name: ")
+    answer = answer.capitalize()
     answer_collection.append(answer)
 
     # checking if the answer is in the list of state_name
@@ -22,13 +23,14 @@ while game_is_on:
         sam = turtle.Turtle()
         sam.penup()
         sam.hideturtle()
-        sam.goto(state_data.x, state_data.y)
+        sam.goto(int(state_data.x), int(state_data.y))
         sam.write(answer)
+        counter +=1
 
     if answer not in state_name:
         game_is_on = False
 
-
+screen.exitonclick()
 
 # data = pd.read_csv('100daysbootcamp\day 25\squirrel_data.csv')
 # gray_squirrel = len(data[data['Primary Fur Color']=='Gray'])

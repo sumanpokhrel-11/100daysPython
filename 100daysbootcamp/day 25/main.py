@@ -12,14 +12,15 @@ counter = 0
 state_name = state['state'].to_list()
 answer_collection = []
 game_is_on = True
-while game_is_on:
+while len(answer_collection)< 50:
     answer = screen.textinput(title=f'{counter}/50 States are Correct', prompt= "Enter another state name: ")
     answer = answer.capitalize()
-    answer_collection.append(answer)
+    
 
     # checking if the answer is in the list of state_name
     if answer in state_name:
         state_data = state[state['state'] == answer]
+        answer_collection.append(answer)
         sam = turtle.Turtle()
         sam.penup()
         sam.hideturtle()

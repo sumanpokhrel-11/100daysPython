@@ -2,9 +2,16 @@ first = open('100daysbootcamp\day 26\one.txt', 'r')
 second = open('100daysbootcamp\day 26\wo.txt', 'r')
 first_num = [int(num) for num in first]
 second_num = [int(num) for num in second]
-final = []
-for number in first_num:
-    if first_num[number] == second_num[number]:
-        final.append(first_num[number])
 
+# using list comprehension
+final = [first_num[i] for i in range(len(first_num)) if first_num[i] in second_num]
 print(final)
+
+
+# using normal for loop
+# final = []
+# for i in range(len(first_num)):
+#     if first_num[i] in  second_num:
+#         final.append(first_num[i])
+
+# print(final)

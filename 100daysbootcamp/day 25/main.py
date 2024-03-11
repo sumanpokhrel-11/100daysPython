@@ -28,10 +28,6 @@ while len(answer_collection)< 50:
         counter +=1
 
     if answer =='Exit':
-        # states_not_remembered = []
-        # for i in state_name:
-        #     if i not in answer_collection:
-        #         states_not_remembered.append(i)
         states_not_remembered = [states_name for states_name in state_name if states_name not in answer_collection]
         states_not_remembered = pd.DataFrame(states_not_remembered)
         states_not_remembered.to_csv('100daysbootcamp/day 25/states_not_remembered.csv')

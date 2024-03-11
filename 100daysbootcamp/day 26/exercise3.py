@@ -4,7 +4,8 @@ first_num = [int(num) for num in first]
 second_num = [int(num) for num in second]
 
 # using list comprehension
-final = [first_num[i] for i in range(len(first_num)) if first_num[i] in second_num]
+# final = [first_num[i] for i in range(len(first_num)) if first_num[i] in second_num]
+final = [num for num in first_num if num in second_num]
 print(final)
 
 first.close()

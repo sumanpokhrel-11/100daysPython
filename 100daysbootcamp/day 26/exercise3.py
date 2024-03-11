@@ -7,6 +7,8 @@ second_num = [int(num) for num in second]
 final = [first_num[i] for i in range(len(first_num)) if first_num[i] in second_num]
 print(final)
 
+first.close()
+second.close()
 
 # using normal for loop
 # final = []

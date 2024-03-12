@@ -15,7 +15,16 @@ def change_label():
 btn = tk.Button(text='Click Me', command = change_label)
 btn.pack()
 
+def say_hello():
+    print("Hello")
+    name = input.get()
+    label.config(text=name)
+    
+btn = tk.Button(text="Enter Your Name", command= say_hello)
+btn.pack()
 
+enter = tk.Entry()
+enter.pack()
 
 window.mainloop()
 

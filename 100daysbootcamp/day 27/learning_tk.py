@@ -7,12 +7,12 @@ label = tk.Label(text='This is the label', font=('Ariel', 20, 'bold'))
 
 
 label['text'] = 'label text using dictionary'
-label.config(text= 'this is a text from using config')
-label.pack()
 
-def count():
-    print('hi')
-btn = tk.Button(text='Click Me', command = count)
+
+def change_label():
+    label.config(text= 'this is a text from using button')
+    label.pack()
+btn = tk.Button(text='Click Me', command = change_label)
 btn.pack()
 
 

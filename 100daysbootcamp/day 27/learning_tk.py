@@ -4,7 +4,17 @@ window = tk.Tk()
 window.title("Learning Tkinter")
 window.minsize(width=500, height= 800)
 label = tk.Label(text='This is the label', font=('Ariel', 20, 'bold'))
+
+
+label['text'] = 'label text using dictionary'
+label.config(text= 'this is a text from using config')
 label.pack()
+
+def count():
+    print('hi')
+btn = tk.Button(text='Click Me', command = count)
+btn.pack()
+
 
 
 window.mainloop()

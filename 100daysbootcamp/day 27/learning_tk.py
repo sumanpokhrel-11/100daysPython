@@ -17,15 +17,15 @@ btn.pack()
 
 def say_hello():
     print("Hello")
-    name = input.get()
-    label.config(text=name)
+    enter = tk.Entry()
+    name = enter.get()
+    enter.pack()
     
+    
+    label.config(text=name)
+    label.pack()
 btn = tk.Button(text="Enter Your Name", command= say_hello)
 btn.pack()
-
-enter = tk.Entry()
-enter.pack()
-
 window.mainloop()
 
 

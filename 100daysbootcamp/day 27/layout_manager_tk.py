@@ -14,7 +14,7 @@ window.config(padx=50, pady=50) #padding to the window
 my_label = Label(text='I M Label', font=('Arial', 24, 'bold'))
 my_label.config(text='New text')
 my_label.grid(row=0, column=0)
-my_label.config(padx=50, pady=50)
+my_label.config(padx=50, pady=50)#applying padding to the fix widget
 
 # button
 button = Button(text='Click Me', command=button_clicked)

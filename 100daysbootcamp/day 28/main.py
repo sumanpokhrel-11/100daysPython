@@ -10,6 +10,19 @@ LONG_BREAK_MIN = 20
 
 from tkinter import *
 
+# timer mechanism
+def start_timer():
+    count_down(5)
+
+
+
+# countdown mechanisms
+def count_down(count):
+    canvas.itemconfig(timer_text, text= count)
+    if count>=0:
+        window.after(1000, count_down, count-1)
+
+
 # ui setup
 
 window = Tk()
@@ -26,18 +39,19 @@ canvas.create_image(125, 113, image = pic)
 canvas.create_text(125, 113, text="00:00", fill='white', font=(FONT_NAME, 35, 'bold'))
 canvas.grid(row=1, column=1)
 
+count_down(5)
 def start():
     pass
 def stop():
     pass
-btn1 = Button(text='Start', command = start)
+btn1 = Button(text='Start', command = start_timer, highlightthickness=0)
 btn1.grid(row=2,column=0)
 
-btn2 = Button(text='Reset', command = stop)
+btn2 = Button(text='Reset', command = stop, highlightthickness=0)
 btn2.grid(row=2,column=2)
 
 check = "✔️"
-label2 = Label(text=check)
+label2 = Label(text=check, fg=GREEN, bg=YELLOW, font=(FONT_NAME, 15))
 label2.grid(row=3, column=1)
 
 

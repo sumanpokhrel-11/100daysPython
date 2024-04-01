@@ -9,16 +9,18 @@ LONG_BREAK_MIN = 20
 
 
 from tkinter import *
-
+import math
 # timer mechanism
 def start_timer():
-    count_down(5)
+    count_down(5*60)
 
 
 
 # countdown mechanisms
 def count_down(count):
-    canvas.itemconfig(timer_text, text= count)
+    count_min = math.floor(count/60)
+    count_sec = count%60
+    canvas.itemconfig(timer_text, text= f"{count_min}:{count_sec}")
     if count>0:
         window.after(1000, count_down, count-1)
 
@@ -36,11 +38,11 @@ label1.grid(row=0, column= 1)
 canvas = Canvas(width=250, height=226, bg= YELLOW, highlightthickness=0, highlightcolor=YELLOW)
 pic = PhotoImage(file="100daysbootcamp\day 28\image.png")
 canvas.create_image(125, 113, image = pic)
-canvas.create_text(125, 113, text="00:00", fill='white', font=(FONT_NAME, 35, 'bold'))
-timer_text = canvas.create_text(110, 140, text='00:00', fill='white',font=(FONT_NAME, 35, 'bold'))
+# canvas.create_text(125, 113, text="00:00", fill='white', font=(FONT_NAME, 35, 'bold'))
+timer_text = canvas.create_text(120, 130, text='00:00', fill='white',font=(FONT_NAME, 35, 'bold'))
 canvas.grid(row=1, column=1)
 
-count_down(5)
+
 def start():
     pass
 def stop():

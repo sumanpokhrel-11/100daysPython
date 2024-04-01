@@ -19,7 +19,7 @@ def start_timer():
 # countdown mechanisms
 def count_down(count):
     canvas.itemconfig(timer_text, text= count)
-    if count>=0:
+    if count>0:
         window.after(1000, count_down, count-1)
 
 
@@ -37,6 +37,7 @@ canvas = Canvas(width=250, height=226, bg= YELLOW, highlightthickness=0, highlig
 pic = PhotoImage(file="100daysbootcamp\day 28\image.png")
 canvas.create_image(125, 113, image = pic)
 canvas.create_text(125, 113, text="00:00", fill='white', font=(FONT_NAME, 35, 'bold'))
+timer_text = canvas.create_text(110, 140, text='00:00', fill='white',font=(FONT_NAME, 35, 'bold'))
 canvas.grid(row=1, column=1)
 
 count_down(5)

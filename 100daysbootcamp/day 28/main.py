@@ -1,3 +1,7 @@
+from tkinter import *
+import math
+
+# constants
 PINK = "#e2979c"
 RED = "#e7305b"
 GREEN = "#9bdeac"
@@ -10,8 +14,6 @@ reps = 0
 timer = None
 
 
-from tkinter import *
-import math
 # timer mechanism
 def start_timer():
     global reps
@@ -31,7 +33,7 @@ def start_timer():
         count_down(longbr)
         label1.config(text='Break', font=(FONT_NAME, 34, 'bold'), fg=PINK, bg=YELLOW)
 
-    count_down(15)
+    # count_down(15)
 
 
 # reset timer

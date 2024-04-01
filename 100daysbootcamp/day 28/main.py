@@ -12,6 +12,24 @@ from tkinter import *
 import math
 # timer mechanism
 def start_timer():
+    global reps
+    reps = 1
+    reps +=1
+    work = WORK_MIN * 60
+    shortbr = SHORT_BREAK_MIN * 60
+    longbr = LONG_BREAK_MIN * 60
+    if reps==1 or reps==3 or reps==5 or reps==7:
+        count_down(work)
+        label1.config(text='Work', font=(FONT_NAME, 34, 'bold'), fg=GREEN, bg=YELLOW)
+
+    elif reps ==2 or reps==4 or reps==6:
+        count_down(shortbr)
+        label1.config(text='Break', font=(FONT_NAME, 34, 'bold'), fg=RED, bg=YELLOW)
+
+    else :
+        count_down(longbr)
+        label1.config(text='Break', font=(FONT_NAME, 34, 'bold'), fg=PINK, bg=YELLOW)
+
     count_down(15)
 
 
@@ -26,6 +44,8 @@ def count_down(count):
     canvas.itemconfig(timer_text, text= f"{count_min}:{count_sec}")
     if count>0:
         window.after(1000, count_down, count-1)
+    else:
+        start_timer()
 
 
 # ui setup

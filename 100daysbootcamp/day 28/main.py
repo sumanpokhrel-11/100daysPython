@@ -38,9 +38,10 @@ def start_timer():
 def reset_timer():
     window.after_cancel(timer)
     label1.config(text='Timer',font=(FONT_NAME, 34, 'bold'), fg=GREEN, bg=YELLOW)
-    canvas.create_text(120, 130, text='00:00', fill='white',font=(FONT_NAME, 35, 'bold'))
+    canvas.itemconfig(timer_text,text='00:00', fill='white',font=(FONT_NAME, 35, 'bold'))
     label2.config(text="", fg=GREEN, bg=YELLOW, font=(FONT_NAME, 15))
-
+    global reps
+    reps = 0
 
 # countdown mechanisms
 def count_down(count):

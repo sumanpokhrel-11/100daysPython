@@ -10,6 +10,8 @@ def save():
     file.write(f"{web_data} | {email_data} | {pass_data} \n")
     file.close 
 
+    web_entry.delete(0, END)
+    pass_entry.delete(0,END)
 
 
 

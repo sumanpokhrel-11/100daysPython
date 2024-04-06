@@ -1,6 +1,7 @@
 from tkinter import *
 from tkinter import messagebox
 import random
+import pyperclip
 # ==========================Password Generator=================
 
 def generate_pw():
@@ -9,7 +10,7 @@ def generate_pw():
     number = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
     symbol = ['@', '#','$','%','&','/','+','~']
 
-    letterSize =  random.randint(1,5)
+    letterSize =  random.randint(1,8)
     numberSize = random.randint(1,3)
     symbolSize = random.randint(1,4)
 
@@ -22,7 +23,7 @@ def generate_pw():
     random.shuffle(passwordList)
     myPassword = "".join(passwordList)
     pass_entry.insert(0,myPassword)
-
+    pyperclip.copy(myPassword) # this method copy the password in the clipboard 
 # ===========================Save Password====================
 def save():
     email_data = email_entry.get()
@@ -30,7 +31,7 @@ def save():
     pass_data = pass_entry.get()
 
     # checking validation in the input datas
-    if len(web_data)==0 or len(pass_data) <=8:
+    if len(web_data)==0 or len(pass_data) <=0:
         messagebox.showinfo(title='Warning', message="Don't Leave the fields empty")
 
     else:
@@ -41,8 +42,8 @@ def save():
             file.write(f"{web_data} | {email_data} | {pass_data} \n")
             file.close 
 
-    web_entry.delete(0, END)
-    pass_entry.delete(0,END)
+            web_entry.delete(0, END)
+            pass_entry.delete(0,END)
 
 
 

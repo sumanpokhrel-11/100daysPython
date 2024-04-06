@@ -1,6 +1,31 @@
 from tkinter import *
 from tkinter import messagebox
+# ==========================Password Generator=================
+print("""---------PYTHON PASSWORD GENERATOR---------
+    -----------------------------------------------------
+      ----------------------------------------------""")
 
+import random
+letter = ['A', 'B', 'C', 'D', 'E', 'F', 'G','H', 'I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W',
+          'X','Y','Z' ]
+number = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
+symbol = ['@', '#','$','%','&','/','+','~']
+
+letterSize =  random.randint(1,5)
+numberSize = random.randint(1,3)
+symbolSize = random.randint(1,4)
+
+letter_pw = [random.choice(letter) for _ in range(letterSize)]
+number_pw = [random.choice(number) for _ in range(numberSize)]
+symbol_pw = [random.choice(symbol) for _ in range(symbolSize)]
+
+
+passwordList = letter_pw + number_pw + symbol_pw
+random.shuffle(passwordList)
+myPassword = ""
+for char in passwordList:
+    myPassword +=char
+print(f"Your Password is :\n {myPassword}")
 
 # ===========================Save Password====================
 def save():
@@ -8,12 +33,17 @@ def save():
     web_data = web_entry.get()
     pass_data = pass_entry.get()
 
-    is_ok = messagebox.askokcancel(title=web_data, message= f"These are the details entered: \n Email Address : {email_data}\n Password : {pass_data} \n Click Ok to save the data")
+    # checking validation in the input datas
+    if len(web_data)==0 or len(pass_data) <=8:
+        messagebox.showinfo(title='Warning', message="Don't Leave the fields empty")
 
-    if is_ok:
-        file = open('100daysbootcamp\day 29\data.txt','a')
-        file.write(f"{web_data} | {email_data} | {pass_data} \n")
-        file.close 
+    else:
+        is_ok = messagebox.askokcancel(title=web_data, message= f"These are the details entered: \n Email Address : {email_data}\n Password : {pass_data} \n Click Ok to save the data")
+
+        if is_ok:
+            file = open('100daysbootcamp\day 29\data.txt','a')
+            file.write(f"{web_data} | {email_data} | {pass_data} \n")
+            file.close 
 
     web_entry.delete(0, END)
     pass_entry.delete(0,END)

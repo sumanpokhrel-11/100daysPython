@@ -1,31 +1,27 @@
 from tkinter import *
 from tkinter import messagebox
-# ==========================Password Generator=================
-print("""---------PYTHON PASSWORD GENERATOR---------
-    -----------------------------------------------------
-      ----------------------------------------------""")
-
 import random
-letter = ['A', 'B', 'C', 'D', 'E', 'F', 'G','H', 'I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W',
-          'X','Y','Z' ]
-number = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
-symbol = ['@', '#','$','%','&','/','+','~']
+# ==========================Password Generator=================
 
-letterSize =  random.randint(1,5)
-numberSize = random.randint(1,3)
-symbolSize = random.randint(1,4)
+def generate_pw():
+    letter = ['A', 'B', 'C', 'D', 'E', 'F', 'G','H', 'I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W',
+            'X','Y','Z' ]
+    number = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
+    symbol = ['@', '#','$','%','&','/','+','~']
 
-letter_pw = [random.choice(letter) for _ in range(letterSize)]
-number_pw = [random.choice(number) for _ in range(numberSize)]
-symbol_pw = [random.choice(symbol) for _ in range(symbolSize)]
+    letterSize =  random.randint(1,5)
+    numberSize = random.randint(1,3)
+    symbolSize = random.randint(1,4)
+
+    letter_pw = [random.choice(letter) for _ in range(letterSize)]
+    number_pw = [random.choice(number) for _ in range(numberSize)]
+    symbol_pw = [random.choice(symbol) for _ in range(symbolSize)]
 
 
-passwordList = letter_pw + number_pw + symbol_pw
-random.shuffle(passwordList)
-myPassword = ""
-for char in passwordList:
-    myPassword +=char
-print(f"Your Password is :\n {myPassword}")
+    passwordList = letter_pw + number_pw + symbol_pw
+    random.shuffle(passwordList)
+    myPassword = "".join(passwordList)
+    pass_entry.insert(0,myPassword)
 
 # ===========================Save Password====================
 def save():
@@ -87,7 +83,7 @@ password.grid(row=3, column=0)
 pass_entry = Entry(width=17)
 pass_entry.grid(row=3, column=1)
 
-pass_btn = Button(text="Generate Password")
+pass_btn = Button(text="Generate Password", command=generate_pw)
 pass_btn.grid(row=3, column=2)
 
 # add

@@ -1,4 +1,5 @@
 from tkinter import *
+from tkinter import messagebox
 
 
 # ===========================Save Password====================
@@ -6,9 +7,13 @@ def save():
     email_data = email_entry.get()
     web_data = web_entry.get()
     pass_data = pass_entry.get()
-    file = open('100daysbootcamp\day 29\data.txt','a')
-    file.write(f"{web_data} | {email_data} | {pass_data} \n")
-    file.close 
+
+    is_ok = messagebox.askokcancel(title=web_data, message= f"These are the details entered: \n Email Address : {email_data}\n Password : {pass_data} \n Click Ok to save the data")
+
+    if is_ok:
+        file = open('100daysbootcamp\day 29\data.txt','a')
+        file.write(f"{web_data} | {email_data} | {pass_data} \n")
+        file.close 
 
     web_entry.delete(0, END)
     pass_entry.delete(0,END)

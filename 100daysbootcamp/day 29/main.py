@@ -1,7 +1,6 @@
 from tkinter import *
 from tkinter import messagebox
-import random
-import pyperclip
+import random, pyperclip, json
 # ==========================Password Generator=================
 
 def generate_pw():
@@ -29,21 +28,24 @@ def save():
     email_data = email_entry.get()
     web_data = web_entry.get()
     pass_data = pass_entry.get()
-
+    dict_data = {
+        web_data : {
+            'email' : email_data,
+            'password' :pass_data
+        }
+    }
     # checking validation in the input datas
     if len(web_data)==0 or len(pass_data) <=0:
         messagebox.showinfo(title='Warning', message="Don't Leave the fields empty")
 
     else:
-        is_ok = messagebox.askokcancel(title=web_data, message= f"These are the details entered: \n Email Address : {email_data}\n Password : {pass_data} \n Click Ok to save the data")
-
-        if is_ok:
-            file = open('100daysbootcamp\day 29\data.txt','a')
-            file.write(f"{web_data} | {email_data} | {pass_data} \n")
-            file.close 
-
-            web_entry.delete(0, END)
-            pass_entry.delete(0,END)
+        with open('100daysbootcamp\day 29\data.json', 'w') as data_file:
+            json.dump(dict_data, data_file, indent=4)
+        # file = open('100daysbootcamp\day 29\data.txt','a')
+        # file.write(f"{web_data} | {email_data} | {pass_data} \n")
+        # file.close 
+        web_entry.delete(0, END)
+        pass_entry.delete(0,END)
 
 
 

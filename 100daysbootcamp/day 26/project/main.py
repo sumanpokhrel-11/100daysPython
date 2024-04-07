@@ -9,7 +9,13 @@ data = pd.read_csv('100daysbootcamp\day 26\project\phonetic_alphabet.csv')
 nato = {row.letter: row.code for (index, row) in data.iterrows()}
 # print(nato)
 #TODO 2. Create a list of the phonetic code words from a word that the user inputs.
-user_input = str(input("Enter a word:  ")).upper()
-final = [nato[letter] for letter in user_input]
-
-print(final)
+error = True
+while error:
+    try:
+        user_input = str(input("Enter a word:  ")).upper()
+        final = [nato[letter] for letter in user_input]
+    except KeyError:
+        print("Enter a Word only!")
+    else:
+        error = False
+        print(final)  

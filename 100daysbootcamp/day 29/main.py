@@ -61,16 +61,21 @@ def save():
 # =========================searching data=========================
 def find_password():
     website = web_entry.get()
-    files = open("100daysbootcamp\day 29\data.json", 'r')
-    file = json.load(files)
-    if website in file:
-        e_data = file[website]['email']
-        p_data = file[website]['password']
-        messagebox.showinfo(title=website, message=f"Email : {e_data}\nPassword : {p_data}")
-
+    try:
+        files = open("100daysbootcamp\day 29\data.json", 'r')
+        file = json.load(files)
+    except FileNotFoundError:
+        messagebox.showinfo(title='Error', message='File Not Exist')
     else:
-        messagebox.showinfo(title=website, message="Data Not Found")
-    files.close()
+        if website in file:
+            e_data = file[website]['email']
+            p_data = file[website]['password']
+            messagebox.showinfo(title=website, message=f"Email : {e_data}\nPassword : {p_data}")
+
+        else:
+            messagebox.showinfo(title=website, message=f"Info for {website} not Available")
+    finally:
+        files.close()
 # -------------------------UI-----------------------------------------
 window = Tk()
 window.config(padx=20, pady=20)

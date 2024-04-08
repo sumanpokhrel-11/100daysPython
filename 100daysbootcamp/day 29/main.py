@@ -39,13 +39,23 @@ def save():
         messagebox.showinfo(title='Warning', message="Don't Leave the fields empty")
 
     else:
-        with open('100daysbootcamp\day 29\data.json', 'w') as data_file:
-            json.dump(dict_data, data_file, indent=4)
-        # file = open('100daysbootcamp\day 29\data.txt','a')
-        # file.write(f"{web_data} | {email_data} | {pass_data} \n")
-        # file.close 
-        web_entry.delete(0, END)
-        pass_entry.delete(0,END)
+        try:
+            with open('100daysbootcamp\day 29\data.json', 'r') as data_file:
+                # reading the old file
+                data = json.load(data_file)
+                # updating the new data in the old file
+        except FileNotFoundError:
+            with open('100daysbootcamp\day 29\data.json', 'w') as data_file:
+                # writing the new data in the old file
+                json.dump(data, data_file, indent=4)
+        else:
+            data.update(dict_data)
+        
+            with open("100daysbootcamp\day 29\data.json", 'w') as data_file:
+                json.dump(data, data_file, indent=4)
+        finally:
+            web_entry.delete(0, END)
+            pass_entry.delete(0,END)
 
 
 

@@ -58,10 +58,19 @@ def save():
             pass_entry.delete(0,END)
 
 
+# =========================searching data=========================
+def find_password():
+    website = web_entry.get()
+    files = open("100daysbootcamp\day 29\data.json", 'r')
+    file = json.load(files)
+    if website in file:
+        e_data = file[website]['email']
+        p_data = file[website]['password']
+        messagebox.showinfo(title=website, message=f"Email : {e_data}\nPassword : {p_data}")
 
-
-
-
+    else:
+        messagebox.showinfo(title=website, message="Data Not Found")
+    files.close()
 # -------------------------UI-----------------------------------------
 window = Tk()
 window.config(padx=20, pady=20)
@@ -76,11 +85,15 @@ canvas.grid(row=0, column=1)
 
 # website
 web = Label(text="Website: ")
-web.grid(row=1, column=0)
+web.grid(row=1, column=0, pady=10)
 
-web_entry = Entry(width=35)
-web_entry.grid(row=1, column=1, columnspan=2)
+web_entry = Entry(width=17)
+web_entry.grid(row=1, column=1)
 web_entry.focus()
+
+# search button
+search = Button(text='   Search   ', command=find_password)
+search.grid(row=1, column=2, )
 
 # email/username
 email = Label(text="Email/Username: ")
@@ -91,13 +104,13 @@ email_entry.grid(row=2, column=1, columnspan=2)
 email_entry.insert(0,'suman@gmail.com')
 # password
 password = Label(text="Password: ")
-password.grid(row=3, column=0)
+password.grid(row=3, column=0, pady=10)
 
 pass_entry = Entry(width=17)
 pass_entry.grid(row=3, column=1)
 
 pass_btn = Button(text="Generate Password", command=generate_pw)
-pass_btn.grid(row=3, column=2)
+pass_btn.grid(row=3, column=2, padx=0)
 
 # add
 add = Button(text="ADD", width=30, command=save)

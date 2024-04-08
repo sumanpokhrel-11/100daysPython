@@ -76,9 +76,15 @@ def find_password():
             messagebox.showinfo(title=website, message=f"Info for {website} not Available")
     finally:
         files.close()
+
+
+
+
+
+
 # -------------------------UI-----------------------------------------
 window = Tk()
-window.config(padx=20, pady=20)
+window.config(padx=50, pady=50)
 window.title("Password Manager")
 
 
@@ -89,7 +95,7 @@ canvas.create_image(100,100, image=pic)
 canvas.grid(row=0, column=1)
 
 # website
-web = Label(text="Website: ")
+web = Label(text="Website : ")
 web.grid(row=1, column=0, pady=10)
 
 web_entry = Entry(width=17)
@@ -97,15 +103,15 @@ web_entry.grid(row=1, column=1)
 web_entry.focus()
 
 # search button
-search = Button(text='   Search   ', command=find_password)
+search = Button(text='   Search   ', command=find_password, width=14)
 search.grid(row=1, column=2, )
 
 # email/username
 email = Label(text="Email/Username: ")
 email.grid(row=2, column=0)
 
-email_entry = Entry(width=35)
-email_entry.grid(row=2, column=1, columnspan=2)
+email_entry = Entry(width=17)
+email_entry.grid(row=2, column=1, columnspan=1)
 email_entry.insert(0,'suman@gmail.com')
 # password
 password = Label(text="Password: ")
@@ -115,7 +121,7 @@ pass_entry = Entry(width=17)
 pass_entry.grid(row=3, column=1)
 
 pass_btn = Button(text="Generate Password", command=generate_pw)
-pass_btn.grid(row=3, column=2, padx=0)
+pass_btn.grid(row=3, column=2)
 
 # add
 add = Button(text="ADD", width=30, command=save)

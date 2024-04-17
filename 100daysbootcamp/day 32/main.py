@@ -14,3 +14,13 @@ with smtplib.SMTP("smtp.gmail.com") as connection:
     connection.sendmail(from_addr=my_email,
 to_addrs=receiver,
 msg="Subject:Birthday Message \n \n Happy birthday to You.")
+    
+
+# date time learning
+
+import datetime as dt
+
+now = dt.datetime.now()
+print(now.year)
+dob = dt.datetime(year=2000, month=11, day=26, hour=19, minute=45)
+print(dob)

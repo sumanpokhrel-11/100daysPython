@@ -23,18 +23,19 @@ class QuizUI:
         
         self.canvas.grid(row=1, column=0, columnspan=2, padx=20, pady=20)
 
+       
         # correct tick ✅
-        self.right_btn = Button(text="✅", font=(40))
+        self.right_btn = Button(text="✅", font=(40), command=self.true_func)
         self.right_btn.config(highlightthickness=0, bg='green')
         self.right_btn.grid(row=2, column=0)
         # wrong tick button❌
-        self.wrong_btn = Button(text="❌", font=(40))
+        self.wrong_btn = Button(text="❌", font=(40), command=self.false_func)
         self.wrong_btn.config(highlightthickness=0, bg="red")
         self.wrong_btn.grid(row=2, column=1)
 
         self.get_next_qn()
 
-
+        
 
 
 
@@ -45,3 +46,8 @@ class QuizUI:
     def get_next_qn(self):
         q_test = self.quiz.next_question()
         self.canvas.itemconfig(self.question_text, text= q_test)
+    
+    def true_func(self):
+        self.quiz.check_answer("True")
+    def false_func(self):
+        self.quiz.check_answer("False")

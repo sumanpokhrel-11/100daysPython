@@ -44,9 +44,15 @@ class QuizUI:
 
     def get_next_qn(self):
         self.canvas.config(bg='white')
-        q_test = self.quiz.next_question()
-        self.canvas.itemconfig(self.question_text, text= q_test)
-    
+        if self.quiz.still_has_questions():
+            self.score.config(text = f"Score : {self.quiz.score}")
+            q_test = self.quiz.next_question()
+            self.canvas.itemconfig(self.question_text, text= q_test)
+        else:
+            self.canvas.itemconfig(self.question_text, text = 'You have reached the end of the questions')
+            self.right_btn.config(state="disabled")
+            self.wrong_btn.config(state="disabled")
+
     def true_func(self):
         self.give_feedback(self.quiz.check_answer("True"))
     def false_func(self):

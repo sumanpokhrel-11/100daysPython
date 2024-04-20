@@ -3,7 +3,8 @@ from tkinter import *
 THEME_COLOR = "#375362"
 
 class QuizUI:
-    def __init__(self):
+    def __init__(self, quiz_brain):
+        self.quiz = quiz_brain
         self.window = Tk()
         self.window.title("Quiz App")
         
@@ -29,3 +30,8 @@ class QuizUI:
         self.wrong_btn.config(highlightthickness=0, bg="red")
         self.wrong_btn.grid(row=2, column=1)
         self.window.mainloop()
+
+
+
+    def get_next_qn(self):
+        self.quiz.next_question

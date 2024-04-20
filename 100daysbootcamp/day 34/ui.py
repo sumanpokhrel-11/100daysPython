@@ -34,7 +34,6 @@ class QuizUI:
         self.wrong_btn.grid(row=2, column=1)
 
         self.get_next_qn()
-
         
 
 
@@ -44,10 +43,18 @@ class QuizUI:
 
 
     def get_next_qn(self):
+        self.canvas.config(bg='white')
         q_test = self.quiz.next_question()
         self.canvas.itemconfig(self.question_text, text= q_test)
     
     def true_func(self):
-        self.quiz.check_answer("True")
+        self.give_feedback(self.quiz.check_answer("True"))
     def false_func(self):
-        self.quiz.check_answer("False")
+        self.give_feedback(self.quiz.check_answer("False"))
+    
+    def give_feedback(self, is_right):
+        if is_right:
+            self.canvas.config(bg='green')
+        else:
+            self.canvas.config(bg='red')
+        self.window.after(1000, self.get_next_qn)

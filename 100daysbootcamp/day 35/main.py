@@ -1,6 +1,8 @@
-import requests
-
-api_key = 'c40fe2ac7b93fce21f256e70c3dc1c7a'
+import requests, os
+from dotenv import load_dotenv
+load_dotenv()
+api_key = os.getenv("API_KEY")
+# print(api_key)
 api_url = 'https://api.openweathermap.org/data/2.5/onecall'
 attributes = {
     'lat': '27.713300',

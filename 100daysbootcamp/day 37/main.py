@@ -1,8 +1,11 @@
-import requests
-import datetime
-TOKEN = "gahganigah343hgh1"
-USERNAME = "sumanpok11"
-GRAPH_ID = "graph1"
+import requests, datetime, os
+
+from dotenv import load_dotenv
+load_dotenv()
+
+TOKEN = os.getenv("TOKEN")
+USERNAME = os.getenv("USERNAME")
+GRAPH_ID = os.getenv("GRAPH_ID")
 pixela_endpoint = "https://pixe.la/v1/users"
 
 user_params = {

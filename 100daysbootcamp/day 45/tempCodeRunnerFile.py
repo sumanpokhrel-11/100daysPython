@@ -1,0 +1,1 @@
+class="listicleItem_listicle-item__title__BfenH"

@@ -32,6 +32,8 @@ search = driver.find_element(By.NAME, "search")
 search.send_keys("Python")
 search.send_keys(Keys.RETURN)
 
+
+# automatically form fill up 
 driver.get("https://secure-retreat-92358.herokuapp.com/")
 
 
